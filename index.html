@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heat1 Motors</title>
+<meta name="description" content="Heat1 Motors — a new automotive dealership. Coming soon.">
+<meta name="theme-color" content="#111111">
+<meta property="og:title" content="Heat1 Motors">
+<meta property="og:description" content="A new automotive dealership. Coming soon.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://heat1motors.com/">
+<link rel="canonical" href="https://heat1motors.com/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23111111'/%3E%3Cg transform='translate(14 6) scale(.32)'%3E%3Cpath d='M40 150V70C40 45 55 30 62 0C66 25 78 40 75 65V150Z' fill='%23F26A1B'/%3E%3Cpath d='M40 70L18 84V64L40 50Z' fill='%23F26A1B'/%3E%3Cpath d='M28 146H87V160H28Z' fill='%23F26A1B'/%3E%3Cpath d='M51 146V92C51 78 58 64 62 46C66 64 66 78 65 92V146Z' fill='%23D7261E'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --carbon:#111111; --orange:#F26A1B; --ember:#D7261E; --ash:#555555; --smoke:#F4F1EC;
+    --display:'Archivo Black', 'Arial Black', sans-serif;
+    --text:'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font-family:var(--text);color:var(--carbon);background:var(--carbon);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+
+  /* ---------- Logo (Clean Wordmark) ---------- */
+  .logo{display:inline-flex;flex-direction:column;align-items:center;gap:.156em;line-height:1}
+  .logo .row{display:flex;align-items:flex-end;gap:.03em}
+  .logo .heat{font-family:var(--display);font-size:1em;line-height:.82;letter-spacing:-.015em}
+  .logo svg{width:.5em;height:1.156em;display:block;overflow:visible}
+  .logo .motors{font-size:.203em;font-weight:600;letter-spacing:.846em;margin-right:-.846em}
+  .one{fill:var(--orange)}
+  .core{fill:var(--ember)}
+
+  /* ---------- Header ---------- */
+  header{position:absolute;inset:0 0 auto 0;z-index:3;display:flex;justify-content:space-between;align-items:center;
+    padding:22px clamp(20px,5vw,56px);color:#fff}
+  header .mini{font-size:26px}
+  header .mini .row{gap:1px}
+  header .tag{font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#bdbdbd}
+  header .tag b{color:var(--orange);font-weight:700}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;color:#fff;padding:120px 24px 96px;overflow:hidden;isolation:isolate}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-2;
+    background:
+      radial-gradient(60% 45% at 50% 108%, rgba(242,106,27,.38), rgba(215,38,30,.12) 45%, transparent 70%),
+      radial-gradient(90% 70% at 50% 40%, #1c1c1c 0%, var(--carbon) 70%);}
+  .hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
+    background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(70% 60% at 50% 50%,#000 30%,transparent 80%);mask-image:radial-gradient(70% 60% at 50% 50%,#000 30%,transparent 80%)}
+  .hero .logo{font-size:clamp(68px,15vw,168px);color:#fff}
+  .hero .logo svg{filter:drop-shadow(0 0 .12em rgba(242,106,27,.55));animation:glow 3.2s ease-in-out infinite}
+  @keyframes glow{0%,100%{filter:drop-shadow(0 0 .08em rgba(242,106,27,.45))}50%{filter:drop-shadow(0 0 .2em rgba(242,106,27,.75))}}
+  .eyebrow{margin:clamp(40px,7vh,64px) 0 14px;display:inline-flex;align-items:center;gap:12px;
+    font-size:13px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--orange)}
+  .eyebrow::before,.eyebrow::after{content:"";width:36px;height:2px;background:var(--orange)}
+  .hero h1{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(30px,5.2vw,58px);line-height:1.05;letter-spacing:-.01em;max-width:16ch}
+  .hero p.lede{margin:20px 0 0;max-width:560px;font-size:clamp(16px,1.6vw,19px);line-height:1.6;color:#cfcfcf}
+  .scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:600;letter-spacing:.3em;color:#8a8a8a;text-decoration:none;text-transform:uppercase}
+  .scroll::after{content:"";display:block;width:1px;height:28px;margin:10px auto 0;background:linear-gradient(var(--orange),transparent)}
+
+  /* ---------- Pillars ---------- */
+  .pillars{background:var(--smoke);padding:clamp(64px,10vw,120px) clamp(20px,5vw,56px)}
+  .wrap{max-width:1160px;margin:0 auto}
+  .section-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 40px;margin-bottom:48px}
+  .section-head h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(28px,4vw,44px);line-height:1.05;letter-spacing:-.01em}
+  .section-head p{margin:0;max-width:440px;color:var(--ash);font-size:16px;line-height:1.6}
+  .kicker{display:block;font-family:var(--text);font-size:12px;font-weight:700;letter-spacing:.28em;color:var(--orange);margin-bottom:12px}
+  .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+  .card{background:#fff;border-radius:10px;padding:28px 24px 26px;display:flex;flex-direction:column;gap:12px;border-top:4px solid var(--carbon);
+    transition:transform .2s ease,border-color .2s ease}
+  .card:hover{transform:translateY(-3px);border-color:var(--orange)}
+  .card .icon{width:44px;height:44px;border-radius:8px;background:var(--carbon);display:grid;place-items:center}
+  .card .icon svg{width:22px;height:22px;stroke:var(--orange);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{margin:6px 0 0;font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:.01em}
+  .card p{margin:0;color:#3b3b3b;font-size:15px;line-height:1.55}
+  .card .soon{margin-top:auto;padding-top:8px;font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--ash)}
+
+  /* ---------- Name story ---------- */
+  .story{background:var(--carbon);color:#fff;padding:clamp(64px,10vw,120px) clamp(20px,5vw,56px)}
+  .story .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(32px,6vw,88px);align-items:center}
+  .badge{aspect-ratio:1;max-width:380px;width:100%;margin:0 auto;border-radius:18px;background:
+      radial-gradient(70% 60% at 50% 100%, rgba(242,106,27,.28), transparent 70%),#1a1a1a;
+    border:1px solid #2a2a2a;display:flex;align-items:center;justify-content:center}
+  .badge .logo{font-size:clamp(64px,9vw,104px);color:#fff}
+  .story h2{margin:0 0 20px;font-family:var(--display);font-weight:400;font-size:clamp(28px,4vw,44px);line-height:1.08}
+  .story h2 em{font-style:normal;color:var(--orange)}
+  .story p{margin:0 0 16px;color:#cfcfcf;font-size:17px;line-height:1.7;max-width:560px}
+
+  /* ---------- Footer ---------- */
+  footer{background:#0a0a0a;color:#9a9a9a;padding:40px clamp(20px,5vw,56px);border-top:3px solid var(--orange)}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+  footer .logo{font-size:30px;color:#fff}
+  footer small{font-size:13px;letter-spacing:.04em}
+
+  @media (max-width:960px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr))} .story .wrap{grid-template-columns:1fr} }
+  @media (max-width:560px){ .grid{grid-template-columns:1fr} header .tag{display:none} header{justify-content:center} }
+  @media (prefers-reduced-motion:reduce){ .hero .logo svg{animation:none} .card{transition:none} }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#top" class="logo mini" aria-label="Heat1 Motors home" style="text-decoration:none;color:#fff">
+    <span class="row"><span class="heat">HEAT</span><svg viewBox="18 0 70 160" aria-hidden="true"><path class="one" d="M40 150V70C40 45 55 30 62 0C66 25 78 40 75 65V150Z"/><path class="one" d="M40 70L18 84V64L40 50Z"/><path class="one" d="M28 146H87V160H28Z"/></svg></span>
+  </a>
+  <span class="tag"><b>&bull;</b>&nbsp; Coming Soon</span>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="logo" role="img" aria-label="Heat1 Motors">
+      <span class="row">
+        <span class="heat">HEAT</span>
+        <svg viewBox="18 0 70 160" aria-hidden="true">
+          <path class="one" d="M40 150V70C40 45 55 30 62 0C66 25 78 40 75 65V150Z"/>
+          <path class="one" d="M40 70L18 84V64L40 50Z"/>
+          <path class="one" d="M28 146H87V160H28Z"/>
+          <path class="core" d="M51 146V92C51 78 58 64 62 46C66 64 66 78 65 92V146Z"/>
+        </svg>
+      </span>
+      <span class="motors">MOTORS</span>
+    </div>
+
+    <span class="eyebrow">Coming Soon</span>
+    <h1>Something new is heating up.</h1>
+    <p class="lede">Heat1 Motors is a new automotive dealership in the making. We&rsquo;re building it from the ground up &mdash; and we can&rsquo;t wait to open the doors.</p>
+
+    <a class="scroll" href="#plan">Learn more</a>
+  </section>
+
+  <section class="pillars" id="plan">
+    <div class="wrap">
+      <div class="section-head">
+        <h2><span class="kicker">WHAT WE&rsquo;RE BUILDING</span>A full-service dealership.</h2>
+        <p>One place to buy, finance and take care of your vehicle. Details on location, brands and hours will be posted here as we get closer to opening.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 13l2-5a2 2 0 0 1 1.9-1.4h10.2A2 2 0 0 1 19 8l2 5v4a1 1 0 0 1-1 1h-1.5M3 13v4a1 1 0 0 0 1 1h1.5M3 13h18"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/></svg></div>
+          <h3>Sales</h3>
+          <p>New and pre-owned vehicles, with a straightforward buying experience.</p>
+          <span class="soon">COMING SOON</span>
+        </article>
+        <article class="card">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 9h18v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M3 9l2-4h14l2 4M8 14h8"/></svg></div>
+          <h3>Finance</h3>
+          <p>Financing and lease options, explained clearly from start to finish.</p>
+          <span class="soon">COMING SOON</span>
+        </article>
+        <article class="card">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.5 2.5-2.6-.6-.6-2.6z"/></svg></div>
+          <h3>Service</h3>
+          <p>Factory-trained technicians to keep your vehicle running at its best.</p>
+          <span class="soon">COMING SOON</span>
+        </article>
+        <article class="card">
+          <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></div>
+          <h3>Parts</h3>
+          <p>Genuine parts and accessories for maintenance, repairs and upgrades.</p>
+          <span class="soon">COMING SOON</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="wrap">
+      <div class="badge">
+        <div class="logo" role="img" aria-label="Heat1 Motors">
+          <span class="row"><span class="heat">HEAT</span><svg viewBox="18 0 70 160" aria-hidden="true"><path class="one" d="M40 150V70C40 45 55 30 62 0C66 25 78 40 75 65V150Z"/><path class="one" d="M40 70L18 84V64L40 50Z"/><path class="one" d="M28 146H87V160H28Z"/><path class="core" d="M51 146V92C51 78 58 64 62 46C66 64 66 78 65 92V146Z"/></svg></span>
+          <span class="motors">MOTORS</span>
+        </div>
+      </div>
+      <div>
+        <span class="kicker">THE NAME</span>
+        <h2>Say it &ldquo;Heat-<em>one</em>.&rdquo;</h2>
+        <p>Heat1 comes from a family name, and it stands for a standard. The &ldquo;1&rdquo; is the flame in our logo &mdash; and the place we intend to finish for every customer who walks through our doors.</p>
+        <p>We&rsquo;re putting the pieces in place now. Check back soon.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="logo" aria-label="Heat1 Motors">
+      <span class="row"><span class="heat">HEAT</span><svg viewBox="18 0 70 160" aria-hidden="true"><path class="one" d="M40 150V70C40 45 55 30 62 0C66 25 78 40 75 65V150Z"/><path class="one" d="M40 70L18 84V64L40 50Z"/><path class="one" d="M28 146H87V160H28Z"/></svg></span>
+    </div>
+    <small>&copy; <span id="yr">2026</span> Heat1 Motors &middot; heat1motors.com</small>
+  </div>
+</footer>
+
+<script>
+  try{document.getElementById('yr').textContent=new Date().getFullYear();}catch(e){}
+</script>
+</body>
+</html>
